@@ -15,7 +15,7 @@ public final class Main extends JavaPlugin {
 
 	private static final String
 		syntax =
-		"§bmathMC §7>> §cSyntax: /plot (math function) [radius] | /plot undo | /plot save | /plot material (Bukkit-Material)\nYou can use these variables: x, z\nExample: /plot sqrt(x^2+z^2)";
+		"§bmathMC §7>> §cSyntax: /plot (math function) [radius] | /plot undo | /plot save | /plot material (Bukkit-Material)\n\nYou can use these variables: §lx, z\n§r§cExample: /plot sqrt(x^2+z^2)";
 	private static final Map<Block, Number[]> blocks = new HashMap<>();
 	private static Material plotMaterial = Material.IRON_BLOCK;
 	private static short a;
@@ -91,7 +91,7 @@ public final class Main extends JavaPlugin {
 	private static boolean undo(Player p) {
 		blocks.forEach((b, n) -> b.setTypeIdAndData((int) n[0], (byte) n[1], false));
 		blocks.clear();
-		p.sendMessage("The last plot has been removed.");
+		p.sendMessage("§bmathMC §7>> §eThe last plot has been removed.");
 		return true;
 	}
 }
